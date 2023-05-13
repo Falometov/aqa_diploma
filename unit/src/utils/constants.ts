@@ -7,3 +7,4 @@ export const INVALID_PHONE_NUMBER_ERROR =
   "Invalid value. Phone number must must be in format +375XXXXXXXXX";
 export const INVALID_PASSWORD_ERROR =
   "Invalid value. Password must be longer than 6 characters and contain lowercase and uppercase Latin letters, numbers and special characters";
+export const NONEXISTING_VALUE_ERROR = "Value had not been set yet";
