@@ -1,0 +1,19 @@
+{
+  "name": "aqa_diploma",
+  "version": "1.0.0",
+  "description": "Diploma Project for TMS AQA courses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Falometov/aqa_diploma.git"
+  },
+  "author": "Falometov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Falometov/aqa_diploma/issues"
+  },
+  "homepage": "https://github.com/Falometov/aqa_diploma#readme"
+}
