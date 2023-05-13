@@ -17,7 +17,9 @@ export const ERRORS = {
   "Phone Number": INVALID_PHONE_NUMBER_ERROR,
   Password: INVALID_PASSWORD_ERROR,
 };
+
 export const NONEXISTING_VALUE_ERROR = "Value had not been set yet";
+export const UNKNOWN_BEHAVIOR_ERROR = "Unknown behavior";
 
 // INITIAL VALUES FOR TESTS
 const validUsernames = [

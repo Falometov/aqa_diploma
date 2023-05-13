@@ -4,6 +4,7 @@ import {
   ERRORS,
   EXCEPTIONS_TESTS,
   POSITIVE_TESTS,
+  UNKNOWN_BEHAVIOR_ERROR,
 } from "../src/utils/constants";
 import { Fields } from "../src/utils/types";
 
@@ -34,6 +35,8 @@ describe("Positive tests", () => {
             registrationForm.setUserPassword(value);
             expect(registrationForm.currentUserPassword).to.equal(value);
             break;
+          default:
+            throw new Error(UNKNOWN_BEHAVIOR_ERROR);
         }
       });
     });
@@ -70,6 +73,8 @@ describe("Exception tests", () => {
               ERRORS[Fields.Password]
             );
             break;
+          default:
+            throw new Error(UNKNOWN_BEHAVIOR_ERROR);
         }
       });
     });
