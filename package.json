@@ -20,6 +20,7 @@
     "typescript": "^5.0.4"
   },
   "devDependencies": {
+    "ts-node": "^10.9.1",
     "prettier": "2.8.8"
   }
 }
