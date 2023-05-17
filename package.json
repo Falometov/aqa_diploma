@@ -4,7 +4,8 @@
   "description": "Diploma Project for TMS AQA courses",
   "main": "index.js",
   "scripts": {
-    "unit:test": "npx mocha --config='unit/config/.mocharc.js'"
+    "unit:test": "npx mocha --config='unit/config/.mocharc.js'",
+    "api:test": "npx mocha --config='api/config/.mocharc.js'"
   },
   "repository": {
     "type": "git",
@@ -17,9 +18,10 @@
   },
   "homepage": "https://github.com/Falometov/aqa_diploma#readme",
   "dependencies": {
-    "typescript": "^5.0.4"
+        "typescript": "^5.0.4"
   },
   "devDependencies": {
+    "axios": "^1.4.0",
     "@types/chai": "^4.3.5",
     "@types/mocha": "^10.0.1",
     "@types/node": "^20.1.7",
