@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "unit:test": "npx mocha --config='unit/config/.mocharc.js'",
-    "api:test": "npx mocha --config='api/config/.mocharc.js'"
+    "api:test": "npx mocha --config='api/config/.mocharc.js'",
+    "ui:test": "playwright test --config=./ui/config/playwright.config.ts",
+    "ui:report": "allure generate ./ui/assets/allure-results --clean -o ./ui/assets/allure-report && allure open ./ui/assets/allure-report"
   },
   "repository": {
     "type": "git",

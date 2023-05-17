@@ -1,7 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
-  testDir: ".././e2e/tests",
+  testDir: "../tests",
   outputDir: '../assets/test-results',
   fullyParallel: true,
   timeout: 40000,
@@ -16,7 +16,7 @@ export default defineConfig({
       "allure-playwright",
       {
         detail: true,
-        outputFolder: "./e2e/assets/allure-results",
+        outputFolder: "./ui/assets/allure-results",
         suiteTitle: false,
       },
     ],
