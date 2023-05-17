@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { expect } from "chai";
-import { POSTS_URL } from "../src/constants";
+import { postSample, POSTS_URL } from "../src/constants";
 import { getRandomPostId } from "../src/helper";
 
 let response: AxiosResponse;
@@ -38,7 +38,17 @@ describe("JSONPlaceholder HTTP methods positive tests", () => {
     for (const comment of response.data) {
       expect(comment.postId).to.be.equal(postId);
     }
+  });
 
-    //expect(response.data.id).to.be.equal(postId)
+  it.only("Should create new post with POST method", async () => {
+    try {
+      response = await axios.post(POSTS_URL, postSample);
+    } catch (err: any) {
+      throw new Error(err.message);
+    }
+    expect(response.status).to.be.equal(201);
+    expect(response.data.title).to.be.equal(postSample.title);
+    expect(response.data.body).to.be.equal(postSample.body);
+    expect(response.data.userId).to.be.equal(postSample.userId);
   });
 });
