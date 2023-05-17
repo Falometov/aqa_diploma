@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { expect } from "chai";
-import { postSample, POSTS_URL } from "../src/constants";
+import { numberOfPosts, postSample, POSTS_URL } from "../src/constants";
 import { getRandomField, getRandomPostId } from "../src/helper";
 
 let response: AxiosResponse;
@@ -62,8 +62,6 @@ describe("JSONPlaceholder HTTP methods positive tests", () => {
     expect(response.status).to.be.equal(200);
     expect(response.data.id).to.be.equal(postId);
     for (const prop in postSample) {
-      console.log(typeof prop);
-      
       expect(response.data[prop]).to.be.equal(postSample[prop]);
     }
   });
@@ -72,7 +70,9 @@ describe("JSONPlaceholder HTTP methods positive tests", () => {
     const field = getRandomField();
     const postId = getRandomPostId();
     try {
-      response = await axios.patch(POSTS_URL + postId, {[field]: postSample[field]});
+      response = await axios.patch(POSTS_URL + postId, {
+        [field]: postSample[field],
+      });
     } catch (err: any) {
       throw new Error(err.message);
     }
@@ -88,9 +88,25 @@ describe("JSONPlaceholder HTTP methods positive tests", () => {
     } catch (err: any) {
       throw new Error(err.message);
     }
-    expect;
     expect(response.status).to.be.equal(200);
-    expect(response.data).to.be.deep.equal({})
+    expect(response.data).to.be.deep.equal({});
+  });
+});
+
+describe("JSONPlaceholder HTTP methods negative tests", () => {
+  it("Should return 404 status code after GETting post with nonexisting ID", async () => {
+    try {
+      response = await axios.get(POSTS_URL + numberOfPosts + 1);
+    } catch (err: any) {
+      expect(err.response.status).to.be.equal(404);
+    }
   });
 
+  it("Should return 404 status code after DELETing post with nonexisting ID", async () => {
+    try {
+      response = await axios.delete(POSTS_URL + numberOfPosts + 1);
+    } catch (err: any) {
+      expect(err.response.status).to.be.equal(404);
+    }
+  });
 });
