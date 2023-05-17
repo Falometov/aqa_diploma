@@ -4,7 +4,7 @@
   "description": "Diploma Project for TMS AQA courses",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "unit:test": "npx mocha --config='unit/config/.mocharc.js'"
   },
   "repository": {
     "type": "git",
