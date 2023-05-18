@@ -40,6 +40,10 @@ export class LoginPage {
     return this.page.locator(SIGN_IN_BUTTON);
   }
 
+  public async setViewportSize() {
+    await this.page.setViewportSize({ width: 1920, height: 1080 });
+  }
+
   public async inputUsername(username: string) {
     await this.usernameInput.type(username, { delay: defaultWaitingTime / 10 });
   }

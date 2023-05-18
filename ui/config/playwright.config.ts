@@ -1,17 +1,19 @@
 import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
-  testDir: "../tests",
-  outputDir: '../assets/test-results',
+  testDir: ".././tests",
+  testMatch: ".spec.ts",
+  outputDir: "../assets/test-results",
   fullyParallel: true,
   timeout: 40000,
   expect: {
     timeout: 7000,
   },
-  forbidOnly: true,
+  forbidOnly: false,
   retries: 1,
   workers: 1,
   reporter: [
+    ["line"],
     [
       "allure-playwright",
       {

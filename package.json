@@ -27,6 +27,7 @@
     "@types/chai": "^4.3.5",
     "@types/mocha": "^10.0.1",
     "@types/node": "^20.1.7",
+    "allure-commandline": "^2.22.0",
     "allure-playwright": "^2.3.0",
     "axios": "^1.4.0",
     "chai": "^4.3.7",
