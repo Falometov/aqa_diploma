@@ -7,5 +7,6 @@ export const NAVIGATION_TITLE = 'a[aria-label="npm homepage"]';
 export const SEARCH_INPUT = 'input[type="search"]';
 export const SEARCH_BUTTON = 'button[type="submit"]';
 export const NAVIGATION_ITEM = 'a[role="menuitem"]';
+export const LEARN_ABOUT_PRO_BUTTON = 'a.aad94569';
 
 export const defaultWaitingTime = 4000;
