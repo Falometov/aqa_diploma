@@ -3,3 +3,9 @@ enum NAVIGATION_ITEMS {
   TEAMS = "Teams",
   PRICING = "Pricing",
 }
+
+enum PAGES {
+  HOME = "Home",
+  PRO = "Pro",
+  LOGIN = "Login",
+}
