@@ -1,10 +1,10 @@
-enum NAVIGATION_ITEMS {
+export enum NAVIGATION_ITEMS {
   PRO = "Pro",
   TEAMS = "Teams",
   PRICING = "Pricing",
 }
 
-enum PAGES {
+export enum PAGES {
   HOME = "Home",
   PRO = "Pro",
   LOGIN = "Login",

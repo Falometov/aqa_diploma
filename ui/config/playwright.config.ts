@@ -1,7 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
-  testDir: "../tests/",
+  testDir: "../test",
   outputDir: "../assets/test-results",
   fullyParallel: true,
   timeout: 40000,
@@ -12,7 +12,7 @@ export default defineConfig({
   retries: 1,
   workers: 1,
   reporter: [
-    ["line"],
+    ["line"], ["html"],
     [
       "allure-playwright",
       {
