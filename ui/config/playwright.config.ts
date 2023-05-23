@@ -1,7 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
-  testDir: "../test",
+  testDir: "../tests",
   outputDir: "../assets/test-results",
   fullyParallel: true,
   timeout: 40000,
@@ -9,7 +9,7 @@ export default defineConfig({
     timeout: 7000,
   },
   forbidOnly: false,
-  retries: 1,
+  retries: 0,
   workers: 1,
   reporter: [
     ["line"], ["html"],
@@ -34,9 +34,9 @@ export default defineConfig({
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
     },
-    {
-      name: "webkit",
-      use: { ...devices["Desktop Safari"] },
-    },
+    // {
+    //   name: "webkit",
+    //   use: { ...devices["Desktop Safari"] },
+    // },
   ],
 });

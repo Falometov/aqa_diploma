@@ -1,5 +1,6 @@
 import { Page } from "@playwright/test";
 import { defaultWaitingTime, NAVIGATION_ITEM, NAVIGATION_TITLE, SEARCH_BUTTON, SEARCH_INPUT } from "../../utils/constants";
+import { NAVIGATION_ITEMS } from "../../utils/types";
 
 export class NavigationBar {
   protected static instance: NavigationBar;

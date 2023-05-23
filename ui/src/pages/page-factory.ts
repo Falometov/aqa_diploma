@@ -1,4 +1,5 @@
 import { Page } from "@playwright/test";
+import { PAGES } from "../utils/types";
 import { HomePage } from "./home-page";
 import { LoginPage } from "./login-page";
 import { ProPage } from "./pro-page";

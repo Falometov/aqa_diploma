@@ -22,7 +22,6 @@ describe("JSONPlaceholder HTTP methods positive tests", () => {
     } catch (err: any) {
       throw new Error(err.message);
     }
-    expect;
     expect(response.status).to.be.equal(200);
     expect(response.data.id).to.be.equal(postId);
   });

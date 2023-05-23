@@ -1,7 +1,13 @@
 import { test, expect } from "@playwright/test";
 import { HomePage } from "../src/pages/home-page";
 import { PageFactory } from "../src/pages/page-factory";
-import { LOGIN_URL } from "../src/utils/constants";
+import {
+  LOGIN_URL,
+  searchQuery,
+  SEARCH_URL,
+  SIGN_UP_URL,
+  spaceInUrl,
+} from "../src/utils/constants";
 import { NAVIGATION_ITEMS, PAGES } from "../src/utils/types";
 
 test.describe.configure({ mode: "serial" });
@@ -27,13 +33,21 @@ test.describe("npm Official Site Tests - Home Page", async () => {
     });
   });
 
-  test('Should open Installation Page after clicking "GET STARTED" button', async () => {
+  test('Should open Pro Page after clicking "Learn about Pro" button', async () => {
     await homePage.learnAboutProButton.click();
     expect(homePage.pageHeader).toContainText(NAVIGATION_ITEMS.PRO);
   });
 
-  test('Should open Installation Page after clicking "GET STARTED" button', async () => {
+  test('Should open Sign Up Page after clicking "Sign up for free" button', async () => {
     await homePage.signUpForFreeButton.click();
-    expect(homePage.currentUrl).toEqual(LOGIN_URL);
+    await homePage.waitForUrl(SIGN_UP_URL);
+  });
+
+  searchQuery.forEach((searchQuery) => {
+    test(`Should correctly search using "${searchQuery}" search query`, async () => {
+      await homePage.navigationBar.searchFor(searchQuery);
+      searchQuery.split(" ").join(spaceInUrl);
+      await homePage.waitForUrl(SEARCH_URL + searchQuery);
+    });
   });
 });

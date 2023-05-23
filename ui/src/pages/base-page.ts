@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import { PAGE_HEADER } from "../utils/constants";
+import { defaultWaitingTime, PAGE_HEADER } from "../utils/constants";
 import { NavigationBar } from "./elements/navigation-bar";
 
 export class BasePage {
@@ -17,6 +17,10 @@ export class BasePage {
 
   get pageHeader() {
     return this.page.locator(PAGE_HEADER);
+  }
+
+  public async waitForUrl(url: string) {
+    await this.page.waitForURL(url, {timeout: defaultWaitingTime});
   }
 
   public async setViewportSize() {

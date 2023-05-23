@@ -1,6 +1,7 @@
 import { Page } from "@playwright/test";
 import {
   defaultWaitingTime,
+  EMPTY_PASSWORD_MESSAGE,
   HIDE_PASSWORD_BUTTON,
   LOGIN_URL,
   PASSWORD_INPUT,
@@ -24,11 +25,11 @@ export class LoginPage {
     return this.instance;
   }
 
-  get usernameInput() {
+  private get usernameInput() {
     return this.page.locator(USERNAME_INPUT);
   }
 
-  get passwordInput() {
+  private get passwordInput() {
     return this.page.locator(PASSWORD_INPUT);
   }
 
@@ -38,6 +39,10 @@ export class LoginPage {
 
   get signInButton() {
     return this.page.locator(SIGN_IN_BUTTON);
+  }
+
+  get emptyPasswordMessage() {
+    return this.page.locator(EMPTY_PASSWORD_MESSAGE);
   }
 
   public async setViewportSize() {
@@ -56,5 +61,9 @@ export class LoginPage {
     await this.inputUsername(username);
     await this.inputPassword(password);
     await this.signInButton.click();
+  }
+
+  public async visitPage() {
+    await this.page.goto(this.url);
   }
 }

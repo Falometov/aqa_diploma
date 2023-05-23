@@ -1,6 +1,7 @@
 export const BASE_URL = "https://www.npmjs.com/";
 export const SEARCH_URL = `${BASE_URL}search?q=`;
 export const LOGIN_URL = `${BASE_URL}login`;
+export const SIGN_UP_URL = `${BASE_URL}signup`;
 export const PRO_URL = `${BASE_URL}/products/pro`;
 
 export const PAGE_HEADER = "h1.f-subheadline-m";
@@ -17,5 +18,10 @@ export const USERNAME_INPUT = "#login_username";
 export const PASSWORD_INPUT = "#login_password";
 export const HIDE_PASSWORD_BUTTON = 'button[name="show-hide-password"]';
 export const SIGN_IN_BUTTON = 'button[type="submit"]';
+export const EMPTY_PASSWORD_MESSAGE = "label#login_password_error_message"
 
 export const defaultWaitingTime = 4000;
+export const spaceInUrl = "%20";
+
+export const searchQuery = ["npm", "typescript", "playwright", "6732tr23fy", "space inside query"];
+export const randomCred = "RandomCred";
