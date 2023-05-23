@@ -2,7 +2,8 @@ export const BASE_URL = "https://www.npmjs.com/";
 export const SEARCH_URL = `${BASE_URL}search?q=`;
 export const LOGIN_URL = `${BASE_URL}login`;
 export const SIGN_UP_URL = `${BASE_URL}signup`;
-export const PRO_URL = `${BASE_URL}/products/pro`;
+export const PRO_URL = `${BASE_URL}products/pro`;
+export const TEAMS_URL = `${BASE_URL}products/teams`;
 
 export const PAGE_HEADER = "h1.f-subheadline-m";
 export const NAVIGATION_TITLE = 'a[aria-label="npm homepage"]';

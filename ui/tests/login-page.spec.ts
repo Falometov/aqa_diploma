@@ -8,7 +8,7 @@ test.describe.configure({ mode: "serial" });
 
 let loginPage: LoginPage;
 
-test.describe.only("npm Official Site Tests - Home Page", async () => {
+test.describe("npm Official Site Tests - Home Page", async () => {
   test.beforeAll(async ({ browser }) => {
     const page = await browser.newPage();
     loginPage = PageFactory.getPage(page, PAGES.LOGIN) as LoginPage;
@@ -25,7 +25,7 @@ test.describe.only("npm Official Site Tests - Home Page", async () => {
     expect(loginPage.emptyPasswordMessage).toBeVisible();
   });
 
-  test('Should display error notification after clicking "Sign In" with invalid credentials', async () => {
+  test.only('Should display error notification after clicking "Sign In" with invalid credentials', async () => {
     await loginPage.signInByUsernameAndPassword(randomCredential, randomCredential);
     expect(loginPage.invalidCredentialsNotification).toBeVisible();
   });
@@ -35,6 +35,4 @@ test.describe.only("npm Official Site Tests - Home Page", async () => {
     await loginPage.hidePasswordButton.click();
     expect(await loginPage.getTypeOfPasswordInput()).not.toEqual(initialType);
   });
-
-  //test()
 });
