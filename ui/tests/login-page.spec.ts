@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { LoginPage } from "../src/pages/login-page";
 import { PageFactory } from "../src/pages/page-factory";
-import { randomCred } from "../src/utils/constants";
+import { randomCredential } from "../src/utils/constants";
 import { PAGES } from "../src/utils/types";
 
 test.describe.configure({ mode: "serial" });
@@ -19,9 +19,22 @@ test.describe.only("npm Official Site Tests - Home Page", async () => {
     await loginPage.visitPage();
   });
 
-  test('Should open Pro Page after clicking "Learn about Pro" button', async () => {
-    await loginPage.inputUsername(randomCred);
+  test('Should display error message after clicking "Sign In" button with filled "Username" and empty "Password" fields', async () => {
+    await loginPage.inputUsername(randomCredential);
     await loginPage.signInButton.dblclick();
     expect(loginPage.emptyPasswordMessage).toBeVisible();
   });
+
+  test('Should display error notification after clicking "Sign In" with invalid credentials', async () => {
+    await loginPage.signInByUsernameAndPassword(randomCredential, randomCredential);
+    expect(loginPage.invalidCredentialsNotification).toBeVisible();
+  });
+
+  test('Should show/hide password after clicking "Show"/"Hide" button', async () => {
+    const initialType = await loginPage.getTypeOfPasswordInput();
+    await loginPage.hidePasswordButton.click();
+    expect(await loginPage.getTypeOfPasswordInput()).not.toEqual(initialType);
+  });
+
+  //test()
 });

@@ -3,6 +3,7 @@ import {
   defaultWaitingTime,
   EMPTY_PASSWORD_MESSAGE,
   HIDE_PASSWORD_BUTTON,
+  INVALID_CREDENTIALS_NOTIFICATION,
   LOGIN_URL,
   PASSWORD_INPUT,
   SIGN_IN_BUTTON,
@@ -45,15 +46,23 @@ export class LoginPage {
     return this.page.locator(EMPTY_PASSWORD_MESSAGE);
   }
 
+  get invalidCredentialsNotification() {
+    return this.page.locator(INVALID_CREDENTIALS_NOTIFICATION);
+  }
+
   public async setViewportSize() {
     await this.page.setViewportSize({ width: 1920, height: 1080 });
+  }
+
+  public async getTypeOfPasswordInput() {
+    return await this.passwordInput.getAttribute("type");
   }
 
   public async inputUsername(username: string) {
     await this.usernameInput.type(username, { delay: defaultWaitingTime / 10 });
   }
 
-  public async inputPassword(password: string) {
+  private async inputPassword(password: string) {
     await this.passwordInput.type(password, { delay: defaultWaitingTime / 10 });
   }
 

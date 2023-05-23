@@ -19,9 +19,10 @@ export const PASSWORD_INPUT = "#login_password";
 export const HIDE_PASSWORD_BUTTON = 'button[name="show-hide-password"]';
 export const SIGN_IN_BUTTON = 'button[type="submit"]';
 export const EMPTY_PASSWORD_MESSAGE = "label#login_password_error_message"
+export const INVALID_CREDENTIALS_NOTIFICATION = "p#notification"
 
 export const defaultWaitingTime = 4000;
 export const spaceInUrl = "%20";
 
 export const searchQuery = ["npm", "typescript", "playwright", "6732tr23fy", "space inside query"];
-export const randomCred = "RandomCred";
+export const randomCredential = "RandomCred";
