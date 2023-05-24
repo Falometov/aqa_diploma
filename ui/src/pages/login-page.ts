@@ -26,11 +26,11 @@ export class LoginPage {
     return this.instance;
   }
 
-  private get usernameInput() {
+  protected get usernameInput() {
     return this.page.locator(USERNAME_INPUT);
   }
 
-  private get passwordInput() {
+  protected get passwordInput() {
     return this.page.locator(PASSWORD_INPUT);
   }
 
@@ -54,10 +54,6 @@ export class LoginPage {
     await this.page.setViewportSize({ width: 1920, height: 1080 });
   }
 
-  public async waitForTimeout() {
-    await this.page.waitForTimeout(defaultWaitingTime / 4);
-  }
-
   public async getTypeOfPasswordInput() {
     return await this.passwordInput.getAttribute("type");
   }
@@ -66,7 +62,7 @@ export class LoginPage {
     await this.usernameInput.type(username, { delay: defaultWaitingTime / 10 });
   }
 
-  private async inputPassword(password: string) {
+  protected async inputPassword(password: string) {
     await this.passwordInput.type(password, { delay: defaultWaitingTime / 10 });
   }
 

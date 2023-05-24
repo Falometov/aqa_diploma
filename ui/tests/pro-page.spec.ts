@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { PageFactory } from "../src/pages/page-factory";
 import { ProPage } from "../src/pages/pro-page";
-import { BASE_URL, LOGIN_URL, PRO_URL, TEAMS_URL } from "../src/utils/constants";
+import { PRO_URL, TEAMS_URL } from "../src/utils/constants";
 import { PAGES } from "../src/utils/types";
 
 test.describe.configure({ mode: "serial" });

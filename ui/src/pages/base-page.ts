@@ -23,10 +23,6 @@ export class BasePage {
     await this.page.waitForURL(url, { timeout: defaultWaitingTime });
   }
 
-  public async waitForTimeout() {
-    await this.page.waitForTimeout(defaultWaitingTime / 4);
-  }
-
   public async setViewportSize() {
     await this.page.setViewportSize({ width: 1920, height: 1080 });
   }

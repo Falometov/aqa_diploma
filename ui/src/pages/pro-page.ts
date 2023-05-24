@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import { PRO_ABOUT_TEAMS_BUTTON, PRO_GET_STARTED_BUTTON, PRO_UPGRADE_PLAN_BUTTON, PRO_URL } from "../utils/constants";
+import { PRO_ABOUT_TEAMS_BUTTON, PRO_GET_STARTED_BUTTON, PRO_URL } from "../utils/constants";
 import { BasePage } from "./base-page";
 
 export class ProPage extends BasePage {
@@ -25,9 +25,5 @@ export class ProPage extends BasePage {
 
   get learnAboutTeamsButton() {
     return this.page.locator(PRO_ABOUT_TEAMS_BUTTON);
-  }
-
-  get upgradeYourPlanButton() {
-    return this.page.locator(PRO_UPGRADE_PLAN_BUTTON);
   }
 }

@@ -15,15 +15,11 @@ export class NavigationBar {
       return this.instance;
   }
 
-  get navigationTitle() {
-      return this.page.locator(NAVIGATION_TITLE);
-  }
-
-  get searchButton() {
+  protected get searchButton() {
       return this.page.locator(SEARCH_BUTTON);
   }
 
-  get searchInput() {
+  protected get searchInput() {
       return this.page.locator(SEARCH_INPUT);
   }
 

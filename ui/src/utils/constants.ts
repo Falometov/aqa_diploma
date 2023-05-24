@@ -25,5 +25,5 @@ export const INVALID_CREDENTIALS_NOTIFICATION = "p#notification"
 export const defaultWaitingTime = 2000;
 export const spaceInUrl = "%20";
 
-export const searchQuery = [/*"npm", "playwright",*/ "space inside query"];
+export const searchQuery = ["npm", "playwright", "space inside query"];
 export const randomCredential = "RandomCred";
