@@ -1,5 +1,4 @@
 import { test, expect } from "@playwright/test";
-import { PageFactory } from "../src/pages/page-factory";
 import { ProPage } from "../src/pages/pro-page";
 import { PRO_URL, TEAMS_URL } from "../src/utils/constants";
 import { PAGES } from "../src/utils/types";
@@ -11,7 +10,7 @@ let proPage: ProPage;
 test.describe("npm Official Site Tests - Pro Page", async () => {
   test.beforeAll(async ({ browser }) => {
     const page = await browser.newPage();
-    proPage = PageFactory.getPage(page, PAGES.PRO) as ProPage;
+    proPage = ProPage.getInstance(page);
     await proPage.setViewportSize();
   });
 

@@ -1,6 +1,5 @@
 import { test, expect } from "@playwright/test";
 import { LoginPage } from "../src/pages/login-page";
-import { PageFactory } from "../src/pages/page-factory";
 import { randomCredential } from "../src/utils/constants";
 import { PAGES } from "../src/utils/types";
 
@@ -11,7 +10,7 @@ let loginPage: LoginPage;
 test.describe("npm Official Site Tests - Login Page", async () => {
   test.beforeAll(async ({ browser }) => {
     const page = await browser.newPage();
-    loginPage = PageFactory.getPage(page, PAGES.LOGIN) as LoginPage;
+    loginPage = LoginPage.getInstance(page);
     await loginPage.setViewportSize();
   });
 

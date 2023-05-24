@@ -1,6 +1,5 @@
 import { test, expect } from "@playwright/test";
 import { HomePage } from "../src/pages/home-page";
-import { PageFactory } from "../src/pages/page-factory";
 import { searchQuery, SEARCH_URL, SIGN_UP_URL, spaceInUrl } from "../src/utils/constants";
 import { NAVIGATION_ITEMS, PAGES } from "../src/utils/types";
 
@@ -11,7 +10,7 @@ let homePage: HomePage;
 test.describe("npm Official Site Tests - Home Page", async () => {
   test.beforeAll(async ({ browser }) => {
     const page = await browser.newPage();
-    homePage = PageFactory.getPage(page, PAGES.HOME) as HomePage;
+    homePage = HomePage.getInstance(page);
     await homePage.setViewportSize();
   });
 
