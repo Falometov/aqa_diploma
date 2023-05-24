@@ -9,11 +9,11 @@ export function getRandomPostId(): number {
 export function getRandomField(): string {
   switch (Math.floor(Math.random() * (3 - 1) + 1)) {
     case 1:
-      return "title"
+      return "title";
     case 2:
-      return "body"
+      return "body";
     case 3:
-      return "userId"
+      return "userId";
     default:
       throw new Error();
   }

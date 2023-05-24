@@ -49,19 +49,13 @@ describe("Exception tests", () => {
       it(`Setting "${value}" value as "${valuesList}" using "${valuesList}" field throws error`, () => {
         switch (valuesList) {
           case Fields.Username:
-            expect(() => registrationForm.setUsername(value)).to.throw(
-              ERRORS[Fields.Username]
-            );
+            expect(() => registrationForm.setUsername(value)).to.throw(ERRORS[Fields.Username]);
             break;
           case Fields.Age:
-            expect(() => registrationForm.setUserAge(value)).to.throw(
-              ERRORS[Fields.Age]
-            );
+            expect(() => registrationForm.setUserAge(value)).to.throw(ERRORS[Fields.Age]);
             break;
           case Fields.Email:
-            expect(() => registrationForm.setUserEmail(value)).to.throw(
-              ERRORS[Fields.Email]
-            );
+            expect(() => registrationForm.setUserEmail(value)).to.throw(ERRORS[Fields.Email]);
             break;
           case Fields.PhoneNumber:
             expect(() => registrationForm.setUserPhoneNumber(value)).to.throw(
@@ -69,9 +63,7 @@ describe("Exception tests", () => {
             );
             break;
           case Fields.Password:
-            expect(() => registrationForm.setUserPassword(value)).to.throw(
-              ERRORS[Fields.Password]
-            );
+            expect(() => registrationForm.setUserPassword(value)).to.throw(ERRORS[Fields.Password]);
             break;
           default:
             throw new Error(UNKNOWN_BEHAVIOR_ERROR);

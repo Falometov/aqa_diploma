@@ -64,15 +64,13 @@ export class RegistrationForm {
 
   public setUserPhoneNumber(phoneNumber: string): void {
     const matchStrings = phoneNumber.match(phoneNumberRegex);
-    if (matchStrings && matchStrings[0] === phoneNumber)
-      this.userPhoneNumber = phoneNumber;
+    if (matchStrings && matchStrings[0] === phoneNumber) this.userPhoneNumber = phoneNumber;
     else throw new Error(ERRORS[Fields.PhoneNumber]);
   }
 
   public setUserPassword(password: string): void {
     const matchStrings = password.match(passwordRegex);
-    if (matchStrings && matchStrings[0] === password)
-      this.userPassword = password;
+    if (matchStrings && matchStrings[0] === password) this.userPassword = password;
     else throw new Error(ERRORS[Fields.Password]);
   }
 }

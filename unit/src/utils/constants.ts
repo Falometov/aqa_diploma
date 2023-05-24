@@ -22,20 +22,8 @@ export const NONEXISTING_VALUE_ERROR = "Value had not been set yet";
 export const UNKNOWN_BEHAVIOR_ERROR = "Unknown behavior";
 
 // INITIAL VALUES FOR TESTS
-const validUsernames = [
-  "lowercase",
-  "UPPERCASE",
-  "camelCase",
-  "Numbers12",
-  "15CharsUsername",
-];
-const invalidUsernames = [
-  "using spaces",
-  "using-dash",
-  "a1",
-  "itExactlySixteen",
-  "кириллица",
-];
+const validUsernames = ["lowercase", "UPPERCASE", "camelCase", "Numbers12", "15CharsUsername"];
+const invalidUsernames = ["using spaces", "using-dash", "a1", "itExactlySixteen", "кириллица"];
 const validAgeValues = ["16", "99"];
 const invalidAgeValues = ["15", "100", "ab", "0"];
 const validEmails = [
