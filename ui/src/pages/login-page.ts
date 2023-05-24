@@ -54,6 +54,10 @@ export class LoginPage {
     await this.page.setViewportSize({ width: 1920, height: 1080 });
   }
 
+  public async waitForTimeout() {
+    await this.page.waitForTimeout(defaultWaitingTime / 4);
+  }
+
   public async getTypeOfPasswordInput() {
     return await this.passwordInput.getAttribute("type");
   }

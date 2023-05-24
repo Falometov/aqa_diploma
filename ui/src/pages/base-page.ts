@@ -20,7 +20,11 @@ export class BasePage {
   }
 
   public async waitForUrl(url: string) {
-    await this.page.waitForURL(url, {timeout: defaultWaitingTime});
+    await this.page.waitForURL(url, { timeout: defaultWaitingTime });
+  }
+
+  public async waitForTimeout() {
+    await this.page.waitForTimeout(defaultWaitingTime / 4);
   }
 
   public async setViewportSize() {

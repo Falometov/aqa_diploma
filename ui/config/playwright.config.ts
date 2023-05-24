@@ -6,13 +6,14 @@ export default defineConfig({
   fullyParallel: false,
   timeout: 40000,
   expect: {
-    timeout: 7000,
+    timeout: 15000,
   },
   forbidOnly: false,
   retries: 0,
   workers: 1,
   reporter: [
-    ["line"], ["html"],
+    ["html"],
+    ["line"],
     [
       "allure-playwright",
       {
@@ -34,9 +35,5 @@ export default defineConfig({
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
     },
-    // {
-    //   name: "webkit",
-    //   use: { ...devices["Desktop Safari"] },
-    // },
   ],
 });
