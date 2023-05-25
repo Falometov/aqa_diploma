@@ -4,7 +4,10 @@
   "description": "Diploma Project for TMS AQA courses",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "unit:test": "npx mocha --config='unit/config/.mocharc.js'",
+    "api:test": "npx mocha --config='api/config/.mocharc.js'",
+    "ui:test": "playwright test --config=./ui/config/playwright.config.ts",
+    "ui:report": "allure generate ./ui/assets/allure-results --clean -o ./ui/assets/allure-report && allure open ./ui/assets/allure-report"
   },
   "repository": {
     "type": "git",
@@ -18,5 +21,19 @@
   "homepage": "https://github.com/Falometov/aqa_diploma#readme",
   "dependencies": {
     "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.33.0",
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^20.1.7",
+    "allure-commandline": "^2.22.0",
+    "allure-playwright": "^2.3.0",
+    "axios": "^1.4.0",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3",
+    "prettier": "2.8.8",
+    "ts-node": "^10.9.1"
   }
 }
