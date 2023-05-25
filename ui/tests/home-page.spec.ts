@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { HomePage } from "../src/pages/home-page";
 import { searchQuery, SEARCH_URL, SIGN_UP_URL, spaceInUrl } from "../src/utils/constants";
-import { NAVIGATION_ITEMS, PAGES } from "../src/utils/types";
+import { NAVIGATION_ITEMS } from "../src/utils/types";
 
 test.describe.configure({ mode: "serial" });
 

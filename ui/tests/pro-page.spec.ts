@@ -1,7 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { ProPage } from "../src/pages/pro-page";
 import { PRO_URL, TEAMS_URL } from "../src/utils/constants";
-import { PAGES } from "../src/utils/types";
 
 test.describe.configure({ mode: "serial" });
 

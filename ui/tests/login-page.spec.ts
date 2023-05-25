@@ -1,7 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { LoginPage } from "../src/pages/login-page";
 import { randomCredential } from "../src/utils/constants";
-import { PAGES } from "../src/utils/types";
 
 test.describe.configure({ mode: "serial" });
 
